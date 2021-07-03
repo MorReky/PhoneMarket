@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Buyers";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<h3>Список заказов</h3>
+<table>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>ФИО</td>
+            <td>Заказ</td>
+            <td>Адресс</td>
+            <td>Почта для связи</td>
+            <td>Дата и время создания заказа</td>
+        </tr>
+    </thead>
+    <tbody>
+        @{ 
+            foreach (var purchase in ViewBag.Buyers)
+            {
+                <tr>
+                    <td>@purchase.Id</td>
+                    <td>@purchase.FIO</td>
+                    <td>@purchase.PhoneId</td>
+                    <td>@purchase.Adress</td>
+                    <td>@purchase.Email</td>
+                    <td>@purchase.DateTime</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+

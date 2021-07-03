@@ -35,5 +35,11 @@ namespace PhoneMarket.Controllers
             return $"Уважаемый, {purchase.FIO}, с Вами скоро свяжутся.";
         }
 
+        public ActionResult Buyers()
+        {
+            IEnumerable<Purchase> purchases = phoneContext.Purchases;
+            ViewBag.Buyers = purchases;
+            return View();
+        }
     }
 }
